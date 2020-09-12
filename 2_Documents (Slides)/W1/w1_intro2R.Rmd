@@ -12,6 +12,13 @@ output:
     df_print: paged
     thumbnails: false
     lightbox: false
+  rmarkdown::github_document:
+    html_preview: yes
+    df_print: paged
+    toc: true
+    toc_depth: 2
+    fig_width: 5
+    fig_height: 5
 header-includes:
 - \usepackage{kotex}
 - \usepackage{hyperref}
