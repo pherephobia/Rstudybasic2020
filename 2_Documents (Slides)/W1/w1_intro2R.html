@@ -3704,11 +3704,11 @@ Univ. of South Carolina, Columbia<br />
 <span id="cb78-8"><a href="#cb78-8"></a><span class="co">## 자료 유형을 확인하는 함수는 class(), 혹은 typeof()입니다.</span></span>
 <span id="cb78-9"><a href="#cb78-9"></a><span class="co">## library(tidyverse) # 아까 불러왔지만, 여기서는 로드하지 않았다고 가정합시다.</span></span>
 <span id="cb78-10"><a href="#cb78-10"></a><span class="kw">class</span>(diamonds)</span></code></pre></div>
-<p>[1] “tbl_df” “tbl” “data.frame”</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a>diamonds &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(diamonds)</span>
-<span id="cb79-2"><a href="#cb79-2"></a></span>
-<span id="cb79-3"><a href="#cb79-3"></a>descriptive_statistics &lt;-<span class="st"> </span><span class="kw">describe</span>(diamonds)</span>
-<span id="cb79-4"><a href="#cb79-4"></a>descriptive_statistics <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>diamonds &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(diamonds)</span>
+<span id="cb80-2"><a href="#cb80-2"></a></span>
+<span id="cb80-3"><a href="#cb80-3"></a>descriptive_statistics &lt;-<span class="st"> </span><span class="kw">describe</span>(diamonds)</span>
+<span id="cb80-4"><a href="#cb80-4"></a>descriptive_statistics <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
 <table>
 <colgroup>
 <col width="4%"></col>
@@ -3795,12 +3795,12 @@ Univ. of South Carolina, Columbia<br />
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a><span class="co"># 좀 더 깔끔한 표로 만들어줄 수도 있습니다.</span></span>
-<span id="cb80-2"><a href="#cb80-2"></a></span>
-<span id="cb80-3"><a href="#cb80-3"></a>descriptive_statistics <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
-<span id="cb80-4"><a href="#cb80-4"></a>  <span class="dt">digits =</span> <span class="dv">3</span>,</span>
-<span id="cb80-5"><a href="#cb80-5"></a>  <span class="dt">caption =</span> <span class="st">&quot;Summary Statistics of Diamonds&quot;</span></span>
-<span id="cb80-6"><a href="#cb80-6"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="co"># 좀 더 깔끔한 표로 만들어줄 수도 있습니다.</span></span>
+<span id="cb81-2"><a href="#cb81-2"></a></span>
+<span id="cb81-3"><a href="#cb81-3"></a>descriptive_statistics <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb81-4"><a href="#cb81-4"></a>  <span class="dt">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb81-5"><a href="#cb81-5"></a>  <span class="dt">caption =</span> <span class="st">&quot;Summary Statistics of Diamonds&quot;</span></span>
+<span id="cb81-6"><a href="#cb81-6"></a>)</span></code></pre></div>
 <table>
 <caption>Summary Statistics of Diamonds</caption>
 <colgroup>
@@ -3888,14 +3888,14 @@ Univ. of South Carolina, Columbia<br />
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="co"># 필요한 열만 따로 보여줄 수도 있습니다.</span></span>
-<span id="cb81-2"><a href="#cb81-2"></a></span>
-<span id="cb81-3"><a href="#cb81-3"></a>descriptive_statistics <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb81-4"><a href="#cb81-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(n, mean, sd, min, max) <span class="op">%&gt;%</span></span>
-<span id="cb81-5"><a href="#cb81-5"></a><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
-<span id="cb81-6"><a href="#cb81-6"></a>  <span class="dt">digits =</span> <span class="dv">3</span>,</span>
-<span id="cb81-7"><a href="#cb81-7"></a>  <span class="dt">caption =</span> <span class="st">&quot;Summary Statistics of Diamonds&quot;</span></span>
-<span id="cb81-8"><a href="#cb81-8"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="co"># 필요한 열만 따로 보여줄 수도 있습니다.</span></span>
+<span id="cb82-2"><a href="#cb82-2"></a></span>
+<span id="cb82-3"><a href="#cb82-3"></a>descriptive_statistics <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb82-4"><a href="#cb82-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(n, mean, sd, min, max) <span class="op">%&gt;%</span></span>
+<span id="cb82-5"><a href="#cb82-5"></a><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb82-6"><a href="#cb82-6"></a>  <span class="dt">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb82-7"><a href="#cb82-7"></a>  <span class="dt">caption =</span> <span class="st">&quot;Summary Statistics of Diamonds&quot;</span></span>
+<span id="cb82-8"><a href="#cb82-8"></a>)</span></code></pre></div>
 <table>
 <caption>Summary Statistics of Diamonds</caption>
 <thead>
@@ -3935,15 +3935,15 @@ Univ. of South Carolina, Columbia<br />
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="co"># 변수명을 바꿔줄 수도 있습니다.</span></span>
-<span id="cb82-2"><a href="#cb82-2"></a>descriptive_statistics<span class="op">$</span>Variables &lt;-<span class="st"> </span><span class="kw">row.names</span>(descriptive_statistics)</span>
-<span id="cb82-3"><a href="#cb82-3"></a>descriptive_statistics <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb82-4"><a href="#cb82-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(Variables, <span class="dt">Obs =</span> n, <span class="dt">Mean =</span> mean, </span>
-<span id="cb82-5"><a href="#cb82-5"></a>                <span class="dt">St.Dev =</span> sd, <span class="dt">Min =</span> min, <span class="dt">Max =</span> max) <span class="op">%&gt;%</span></span>
-<span id="cb82-6"><a href="#cb82-6"></a><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
-<span id="cb82-7"><a href="#cb82-7"></a>  <span class="dt">digits =</span> <span class="dv">3</span>,</span>
-<span id="cb82-8"><a href="#cb82-8"></a>  <span class="dt">caption =</span> <span class="st">&quot;Summary Statistics of Diamonds&quot;</span></span>
-<span id="cb82-9"><a href="#cb82-9"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a><span class="co"># 변수명을 바꿔줄 수도 있습니다.</span></span>
+<span id="cb83-2"><a href="#cb83-2"></a>descriptive_statistics<span class="op">$</span>Variables &lt;-<span class="st"> </span><span class="kw">row.names</span>(descriptive_statistics)</span>
+<span id="cb83-3"><a href="#cb83-3"></a>descriptive_statistics <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb83-4"><a href="#cb83-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(Variables, <span class="dt">Obs =</span> n, <span class="dt">Mean =</span> mean, </span>
+<span id="cb83-5"><a href="#cb83-5"></a>                <span class="dt">St.Dev =</span> sd, <span class="dt">Min =</span> min, <span class="dt">Max =</span> max) <span class="op">%&gt;%</span></span>
+<span id="cb83-6"><a href="#cb83-6"></a><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb83-7"><a href="#cb83-7"></a>  <span class="dt">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb83-8"><a href="#cb83-8"></a>  <span class="dt">caption =</span> <span class="st">&quot;Summary Statistics of Diamonds&quot;</span></span>
+<span id="cb83-9"><a href="#cb83-9"></a>)</span></code></pre></div>
 <table>
 <caption>Summary Statistics of Diamonds</caption>
 <thead>
@@ -3987,9 +3987,9 @@ Univ. of South Carolina, Columbia<br />
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a><span class="co"># 만약 stargazer로 생산한 객체를 sum.table1이라는 이름으로 저장했다면,</span></span>
-<span id="cb83-2"><a href="#cb83-2"></a><span class="co"># write(x=sum.table1, file=&quot;./tables/Summary1.tex&quot;) </span></span>
-<span id="cb83-3"><a href="#cb83-3"></a><span class="co"># 위의 코드로 tex파일로 저장, LaTex로 열고 편집할 수 있습니다.</span></span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="co"># 만약 stargazer로 생산한 객체를 sum.table1이라는 이름으로 저장했다면,</span></span>
+<span id="cb84-2"><a href="#cb84-2"></a><span class="co"># write(x=sum.table1, file=&quot;./tables/Summary1.tex&quot;) </span></span>
+<span id="cb84-3"><a href="#cb84-3"></a><span class="co"># 위의 코드로 tex파일로 저장, LaTex로 열고 편집할 수 있습니다.</span></span></code></pre></div>
 </div>
 <div id="기타-참고자료" class="section level2">
 <h2>기타 참고자료</h2>
@@ -4004,30 +4004,30 @@ Univ. of South Carolina, Columbia<br />
 <p>가장 기본적으로(그리고 중요하게) 알아두어야 할 데이터 구조는 바로 원자 벡터(atomic vectors), 리스트(lists), 그리고 데이터프레임(dataframes)과 티블(tibbles)입니다. 이제부터는 거의 모든 데이터를 관리하는 데 있어 <code>tidyverse</code> 패키지를 적극적으로 사용하도록 하겠습니다.</p>
 <div id="벡터" class="section level3">
 <h3>벡터</h3>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb84-2"><a href="#cb84-2"></a></span>
-<span id="cb84-3"><a href="#cb84-3"></a><span class="co">## 원자 벡터는 c() 라는 함수로 만들 수 있습니다.</span></span>
-<span id="cb84-4"><a href="#cb84-4"></a>my_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="co"># 벡터는 반드시 동일한 유형의 요소들만을 가져야 합니다.</span></span>
-<span id="cb84-5"><a href="#cb84-5"></a><span class="kw">typeof</span>(my_vector)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb85-2"><a href="#cb85-2"></a></span>
+<span id="cb85-3"><a href="#cb85-3"></a><span class="co">## 원자 벡터는 c() 라는 함수로 만들 수 있습니다.</span></span>
+<span id="cb85-4"><a href="#cb85-4"></a>my_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="co"># 벡터는 반드시 동일한 유형의 요소들만을 가져야 합니다.</span></span>
+<span id="cb85-5"><a href="#cb85-5"></a><span class="kw">typeof</span>(my_vector)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a><span class="co">## 연산자들은 벡터 전체에 걸쳐서 적용됩니다.</span></span>
-<span id="cb86-2"><a href="#cb86-2"></a>my_vector <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a><span class="co">## 연산자들은 벡터 전체에 걸쳐서 적용됩니다.</span></span>
+<span id="cb87-2"><a href="#cb87-2"></a>my_vector <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 2 4 6</code></pre>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a><span class="co">## 벡터는 1차원의 자료만을 가집니다. </span></span>
-<span id="cb88-2"><a href="#cb88-2"></a><span class="co">## 즉, 벡터 안에 다른 벡터를 중첩하여 만들 수 없습니다(cannot nest).</span></span>
-<span id="cb88-3"><a href="#cb88-3"></a>new_vector &lt;-<span class="st"> </span><span class="kw">c</span>(my_vector, <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>), <span class="kw">c</span>(<span class="dv">6</span>, <span class="dv">7</span>)) <span class="co"># 자, 어디 중첩이 되나 보겠습니다.</span></span>
-<span id="cb88-4"><a href="#cb88-4"></a></span>
-<span id="cb88-5"><a href="#cb88-5"></a><span class="co">## 여기서의 벡터 결과는 중첩되지 않고 단지 1차원의 단순 벡터일 뿐입니다.</span></span>
-<span id="cb88-6"><a href="#cb88-6"></a><span class="co">## (리스트는 이 결과와는 달리 자료 내에 중첩이 가능합니다.)</span></span>
-<span id="cb88-7"><a href="#cb88-7"></a><span class="kw">print</span>(new_vector)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a><span class="co">## 벡터는 1차원의 자료만을 가집니다. </span></span>
+<span id="cb89-2"><a href="#cb89-2"></a><span class="co">## 즉, 벡터 안에 다른 벡터를 중첩하여 만들 수 없습니다(cannot nest).</span></span>
+<span id="cb89-3"><a href="#cb89-3"></a>new_vector &lt;-<span class="st"> </span><span class="kw">c</span>(my_vector, <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>), <span class="kw">c</span>(<span class="dv">6</span>, <span class="dv">7</span>)) <span class="co"># 자, 어디 중첩이 되나 보겠습니다.</span></span>
+<span id="cb89-4"><a href="#cb89-4"></a></span>
+<span id="cb89-5"><a href="#cb89-5"></a><span class="co">## 여기서의 벡터 결과는 중첩되지 않고 단지 1차원의 단순 벡터일 뿐입니다.</span></span>
+<span id="cb89-6"><a href="#cb89-6"></a><span class="co">## (리스트는 이 결과와는 달리 자료 내에 중첩이 가능합니다.)</span></span>
+<span id="cb89-7"><a href="#cb89-7"></a><span class="kw">print</span>(new_vector)</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5 6 7</code></pre>
 </div>
 </div>
 <div id="리스트" class="section level2">
 <h2>리스트</h2>
 <p>리스트는 서로 다른 유형의 데이터, R에서 지원하는 모든 유형의 데이터를 담을 수 있습니다.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, 3L, <span class="st">&#39;hello, world&#39;</span>, <span class="ot">TRUE</span>)</span>
-<span id="cb90-2"><a href="#cb90-2"></a><span class="kw">print</span>(my_list)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, 3L, <span class="st">&#39;hello, world&#39;</span>, <span class="ot">TRUE</span>)</span>
+<span id="cb91-2"><a href="#cb91-2"></a><span class="kw">print</span>(my_list)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1
 ## 
@@ -4039,93 +4039,93 @@ Univ. of South Carolina, Columbia<br />
 ## 
 ## [[4]]
 ## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a><span class="kw">print</span>(<span class="kw">map_chr</span>(my_list, <span class="cf">function</span>(x) <span class="kw">typeof</span>(x))) <span class="co"># 이건 잠시 후에 좀 더 살펴보겠습니다.</span></span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1"></a><span class="kw">print</span>(<span class="kw">map_chr</span>(my_list, <span class="cf">function</span>(x) <span class="kw">typeof</span>(x))) <span class="co"># 이건 잠시 후에 좀 더 살펴보겠습니다.</span></span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;    &quot;integer&quot;   &quot;character&quot; &quot;logical&quot;</code></pre>
 </div>
 <div id="데이터프레임" class="section level2">
 <h2>데이터프레임</h2>
 <p>데이터프레임은 데이터 분석에서 앞으로 종종 사용하게 될 리스트에 속한 자료 유형이라고 할 수 있습니다.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
-<span id="cb94-2"><a href="#cb94-2"></a>  <span class="dt">age =</span> <span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">40</span>, <span class="dv">15</span>, <span class="dt">replace =</span> T)),</span>
-<span id="cb94-3"><a href="#cb94-3"></a>  <span class="dt">collgrad =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&#39;No&#39;</span>, <span class="st">&#39;Yes&#39;</span>), <span class="dv">15</span>, <span class="dt">replace =</span> T)</span>
-<span id="cb94-4"><a href="#cb94-4"></a>)</span>
-<span id="cb94-5"><a href="#cb94-5"></a><span class="kw">print</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
+<span id="cb95-2"><a href="#cb95-2"></a>  <span class="dt">age =</span> <span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">40</span>, <span class="dv">15</span>, <span class="dt">replace =</span> T)),</span>
+<span id="cb95-3"><a href="#cb95-3"></a>  <span class="dt">collgrad =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&#39;No&#39;</span>, <span class="st">&#39;Yes&#39;</span>), <span class="dv">15</span>, <span class="dt">replace =</span> T)</span>
+<span id="cb95-4"><a href="#cb95-4"></a>)</span>
+<span id="cb95-5"><a href="#cb95-5"></a><span class="kw">print</span>(df)</span></code></pre></div>
 <pre><code>##    age collgrad
-## 1   35       No
-## 2   40      Yes
-## 3   28      Yes
-## 4   36      Yes
-## 5   36       No
-## 6   28       No
-## 7   27       No
-## 8   25      Yes
-## 9   23      Yes
-## 10  28       No
-## 11  30      Yes
-## 12  33       No
-## 13  21       No
-## 14  25      Yes
-## 15  32      Yes</code></pre>
+## 1   20       No
+## 2   37      Yes
+## 3   29      Yes
+## 4   34      Yes
+## 5   36      Yes
+## 6   27       No
+## 7   21      Yes
+## 8   30      Yes
+## 9   30      Yes
+## 10  26       No
+## 11  34      Yes
+## 12  40       No
+## 13  28       No
+## 14  22       No
+## 15  21       No</code></pre>
 </div>
 <div id="티블" class="section level2">
 <h2>티블</h2>
 <p>티블은 <code>tidyverse</code>가 제공하는 데이터프레임이 좀 더 발전한 형태의 자료 유형입니다. 우선 티블의 장점은 더 유저 친화적이라는 것입니다. 예를 들어, 티블은 <strong>R</strong> 콘솔창에서 한 눈에 확인할 수 있을 정도로 데이터의 구조를 출력해주고, 행 이름을 생성하지 않습니다. 그리고 변수들의 자료유형이 어떤 것인지를 보여줍니다. 만약 데이터프레임을 티블로 바꾸고 싶다면 <code>as_tibble()</code> 함수를 사용하면 됩니다.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a>tb &lt;-<span class="st"> </span><span class="kw">tibble</span>(</span>
-<span id="cb96-2"><a href="#cb96-2"></a>  <span class="dt">age =</span> <span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">40</span>, <span class="dv">15</span>, <span class="dt">replace =</span> T)),</span>
-<span id="cb96-3"><a href="#cb96-3"></a>  <span class="dt">collgrad =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&#39;No&#39;</span>, <span class="st">&#39;Yes&#39;</span>), <span class="dv">15</span>, <span class="dt">replace =</span> T)</span>
-<span id="cb96-4"><a href="#cb96-4"></a>)</span>
-<span id="cb96-5"><a href="#cb96-5"></a><span class="kw">print</span>(tb)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1"></a>tb &lt;-<span class="st"> </span><span class="kw">tibble</span>(</span>
+<span id="cb97-2"><a href="#cb97-2"></a>  <span class="dt">age =</span> <span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">40</span>, <span class="dv">15</span>, <span class="dt">replace =</span> T)),</span>
+<span id="cb97-3"><a href="#cb97-3"></a>  <span class="dt">collgrad =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&#39;No&#39;</span>, <span class="st">&#39;Yes&#39;</span>), <span class="dv">15</span>, <span class="dt">replace =</span> T)</span>
+<span id="cb97-4"><a href="#cb97-4"></a>)</span>
+<span id="cb97-5"><a href="#cb97-5"></a><span class="kw">print</span>(tb)</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 2
 ##      age collgrad
 ##    &lt;int&gt; &lt;chr&gt;   
-##  1    33 Yes     
-##  2    25 Yes     
-##  3    25 Yes     
-##  4    31 No      
-##  5    26 No      
-##  6    25 Yes     
-##  7    34 No      
-##  8    24 Yes     
-##  9    35 Yes     
-## 10    31 No      
-## 11    27 No      
-## 12    40 No      
-## 13    30 No      
-## 14    32 Yes     
-## 15    40 Yes</code></pre>
+##  1    32 Yes     
+##  2    28 No      
+##  3    40 No      
+##  4    28 Yes     
+##  5    29 Yes     
+##  6    40 Yes     
+##  7    25 No      
+##  8    34 No      
+##  9    37 No      
+## 10    25 No      
+## 11    23 No      
+## 12    35 No      
+## 13    29 Yes     
+## 14    38 No      
+## 15    30 No</code></pre>
 <div id="함수" class="section level3">
 <h3>함수</h3>
 <p>함수는 아마도 <strong>R</strong> 프로그래밍에서 가장 중요하다고 해도 과언이 아닙니다.</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a><span class="co">## 함수를 만드는 방법은 다음과 같습니다.</span></span>
-<span id="cb98-2"><a href="#cb98-2"></a>greeting &lt;-<span class="st"> </span><span class="cf">function</span>(name) { <span class="co">#내가 만들 함수이름 (내가 집어넣을 객체)</span></span>
-<span id="cb98-3"><a href="#cb98-3"></a>  result &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&#39;Hello &#39;</span>, name, <span class="st">&#39;!&#39;</span>) <span class="co"># &#39;결과&#39;라는 객체에 우측의 함수를 수행하고</span></span>
-<span id="cb98-4"><a href="#cb98-4"></a>  <span class="kw">return</span>(result) <span class="co"># 그 결과를 반환하라는 명령어입니다.</span></span>
-<span id="cb98-5"><a href="#cb98-5"></a>}</span>
-<span id="cb98-6"><a href="#cb98-6"></a></span>
-<span id="cb98-7"><a href="#cb98-7"></a><span class="co">## 자, 이제 위의 &#39;greeting&#39;이라는 함수는 {} 안의 작업을 수행하는 하나의 함수입니다.</span></span>
-<span id="cb98-8"><a href="#cb98-8"></a><span class="co">## 이제 &#39;Robert&#39;라는 객체에 그 함수를 적용해보겠습니다.</span></span>
-<span id="cb98-9"><a href="#cb98-9"></a><span class="kw">greeting</span>(<span class="st">&#39;Robert&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1"></a><span class="co">## 함수를 만드는 방법은 다음과 같습니다.</span></span>
+<span id="cb99-2"><a href="#cb99-2"></a>greeting &lt;-<span class="st"> </span><span class="cf">function</span>(name) { <span class="co">#내가 만들 함수이름 (내가 집어넣을 객체)</span></span>
+<span id="cb99-3"><a href="#cb99-3"></a>  result &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&#39;Hello &#39;</span>, name, <span class="st">&#39;!&#39;</span>) <span class="co"># &#39;결과&#39;라는 객체에 우측의 함수를 수행하고</span></span>
+<span id="cb99-4"><a href="#cb99-4"></a>  <span class="kw">return</span>(result) <span class="co"># 그 결과를 반환하라는 명령어입니다.</span></span>
+<span id="cb99-5"><a href="#cb99-5"></a>}</span>
+<span id="cb99-6"><a href="#cb99-6"></a></span>
+<span id="cb99-7"><a href="#cb99-7"></a><span class="co">## 자, 이제 위의 &#39;greeting&#39;이라는 함수는 {} 안의 작업을 수행하는 하나의 함수입니다.</span></span>
+<span id="cb99-8"><a href="#cb99-8"></a><span class="co">## 이제 &#39;Robert&#39;라는 객체에 그 함수를 적용해보겠습니다.</span></span>
+<span id="cb99-9"><a href="#cb99-9"></a><span class="kw">greeting</span>(<span class="st">&#39;Robert&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello Robert!&quot;</code></pre>
 </div>
 </div>
 <div id="루프와-함수형-프로그래밍loops-functionals" class="section level2">
 <h2>루프와 함수형 프로그래밍(Loops &amp; functionals)</h2>
 <p>루프는 <strong>R</strong>에서 일정한 횟수의 과정을 반복하도록 하게하는 프로그래밍을 말합니다.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a><span class="co">## 몇 개의 이름을 가지고 있는 벡터에 새롭게 만든 인삿말을 표현하도록 만든 함수와 결합해보겠습니다.</span></span>
-<span id="cb100-2"><a href="#cb100-2"></a><span class="co">## 벡터의 각각의 이름들을 해당 함수에 집어넣는 과정을 자동으로 반복되게 해보겠습니다.</span></span>
-<span id="cb100-3"><a href="#cb100-3"></a>my_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Robert&#39;</span>, <span class="st">&#39;James&#39;</span>, <span class="st">&#39;Liz&#39;</span>, <span class="st">&#39;Jennifer&#39;</span>, <span class="st">&#39;Oscar&#39;</span>)</span>
-<span id="cb100-4"><a href="#cb100-4"></a>results1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>)</span>
-<span id="cb100-5"><a href="#cb100-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(my_names)) {</span>
-<span id="cb100-6"><a href="#cb100-6"></a>  results1[i] &lt;-<span class="st"> </span><span class="kw">greeting</span>(my_names[i])</span>
-<span id="cb100-7"><a href="#cb100-7"></a>}</span>
-<span id="cb100-8"><a href="#cb100-8"></a><span class="kw">print</span>(results1)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a><span class="co">## 몇 개의 이름을 가지고 있는 벡터에 새롭게 만든 인삿말을 표현하도록 만든 함수와 결합해보겠습니다.</span></span>
+<span id="cb101-2"><a href="#cb101-2"></a><span class="co">## 벡터의 각각의 이름들을 해당 함수에 집어넣는 과정을 자동으로 반복되게 해보겠습니다.</span></span>
+<span id="cb101-3"><a href="#cb101-3"></a>my_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Robert&#39;</span>, <span class="st">&#39;James&#39;</span>, <span class="st">&#39;Liz&#39;</span>, <span class="st">&#39;Jennifer&#39;</span>, <span class="st">&#39;Oscar&#39;</span>)</span>
+<span id="cb101-4"><a href="#cb101-4"></a>results1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>)</span>
+<span id="cb101-5"><a href="#cb101-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(my_names)) {</span>
+<span id="cb101-6"><a href="#cb101-6"></a>  results1[i] &lt;-<span class="st"> </span><span class="kw">greeting</span>(my_names[i])</span>
+<span id="cb101-7"><a href="#cb101-7"></a>}</span>
+<span id="cb101-8"><a href="#cb101-8"></a><span class="kw">print</span>(results1)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello Robert!&quot;   &quot;Hello James!&quot;    &quot;Hello Liz!&quot;      &quot;Hello Jennifer!&quot;
 ## [5] &quot;Hello Oscar!&quot;</code></pre>
 <p>여기서 한 가지 알아두어야 할 사실은 우리가 만든 함수, 객체가 작동하는 범주(scope)가 중요하다는 것입니다. 변수가 실제로 유효하게 존재하는 범주는 어디인지를 파악하는 것이 중요합니다? 예를 들어, 앞의 <code>greeting</code> 함수에서 <code>result</code> 변수는 오직 그 함수를 정의하는 중괄호(<code>{}</code>) 내부에서만 유효한 변수입니다다. 만약 우리가 <code>print(result)</code>를 이용해 <code>result</code> 변수를 출력하라고 해도, 우리는 아무것도 얻지 못 합니다. 왜냐하면 그 함수 안에서만 소모되는 변수이므로 우리의 작업 환경(environment)에는 별도로 저장되어 있지 않기 때문입니다.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1"></a><span class="co"># 위의 루프문은 함수형을 이용하여 더 간략하고 파워풀하게 만들 수도 있습니다.</span></span>
-<span id="cb102-2"><a href="#cb102-2"></a><span class="co"># 함수형은 tidyverse 패키지의 한 부류인 purrr package에서 지원됩니다.</span></span>
-<span id="cb102-3"><a href="#cb102-3"></a>greeting_list &lt;-<span class="st"> </span><span class="kw">map</span>(my_names, greeting) <span class="co"># 리스트로 저장</span></span>
-<span id="cb102-4"><a href="#cb102-4"></a><span class="kw">print</span>(greeting_list)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1"></a><span class="co"># 위의 루프문은 함수형을 이용하여 더 간략하고 파워풀하게 만들 수도 있습니다.</span></span>
+<span id="cb103-2"><a href="#cb103-2"></a><span class="co"># 함수형은 tidyverse 패키지의 한 부류인 purrr package에서 지원됩니다.</span></span>
+<span id="cb103-3"><a href="#cb103-3"></a>greeting_list &lt;-<span class="st"> </span><span class="kw">map</span>(my_names, greeting) <span class="co"># 리스트로 저장</span></span>
+<span id="cb103-4"><a href="#cb103-4"></a><span class="kw">print</span>(greeting_list)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Hello Robert!&quot;
 ## 
@@ -4140,8 +4140,8 @@ Univ. of South Carolina, Columbia<br />
 ## 
 ## [[5]]
 ## [1] &quot;Hello Oscar!&quot;</code></pre>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a>greeting_vector &lt;-<span class="st"> </span><span class="kw">map_chr</span>(my_names, greeting) <span class="co"># 벡터로 저장</span></span>
-<span id="cb104-2"><a href="#cb104-2"></a><span class="kw">print</span>(greeting_vector)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1"></a>greeting_vector &lt;-<span class="st"> </span><span class="kw">map_chr</span>(my_names, greeting) <span class="co"># 벡터로 저장</span></span>
+<span id="cb105-2"><a href="#cb105-2"></a><span class="kw">print</span>(greeting_vector)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello Robert!&quot;   &quot;Hello James!&quot;    &quot;Hello Liz!&quot;      &quot;Hello Jennifer!&quot;
 ## [5] &quot;Hello Oscar!&quot;</code></pre>
 <p>위의 <code>map()</code>과 <code>map_chr()</code> 함수를 이용한 결과 둘 다, 우리가 원하는 루프의 결과와 동일한 값을 가집니다. 단지 자료 유형(나열의 방식)에서 차이가 있다고 할 수 있습니다. 함수형은 <strong>R</strong> 인터페이스에는 존재하지 않는, 사용자들의 편의 상 추가된 개념이라고 생각하면 됩니다(<code>tidyverse</code>).</p>
@@ -4149,28 +4149,28 @@ Univ. of South Carolina, Columbia<br />
 <div id="파이프" class="section level2">
 <h2>파이프(%&gt;%)</h2>
 <p>파이프는 앞으로 <strong>R</strong> 프로그래밍을 하는 데 있어 필수적인 기능입니다. <code>tidyr</code> 패키지(마찬가지로 <code>tidyverse</code> 패키지의 일부)로 불러올 수 있지만, 원래는 <code>magrittr</code> 패키지에 있는 함수입니다. 여러 패키지가 <code>tidyverse</code>의 철학에 따라서 만들어졌고, 현재 <code>tidyverse family</code>라는 이름으로 묶여있습니다.</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1"></a><span class="kw">library</span>(magrittr)</span>
-<span id="cb106-2"><a href="#cb106-2"></a></span>
-<span id="cb106-3"><a href="#cb106-3"></a><span class="co"># R은 함수를 가장 안쪽의 괄호에서부터 바깥쪽으로 순차적으로 읽어 나옵니다.</span></span>
-<span id="cb106-4"><a href="#cb106-4"></a>random_vector &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>, <span class="dt">replace =</span> T)</span>
-<span id="cb106-5"><a href="#cb106-5"></a>result &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">as.integer</span>(<span class="kw">is.na</span>(<span class="kw">unique</span>(random_vector))))</span>
-<span id="cb106-6"><a href="#cb106-6"></a><span class="kw">print</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1"></a><span class="kw">library</span>(magrittr)</span>
+<span id="cb107-2"><a href="#cb107-2"></a></span>
+<span id="cb107-3"><a href="#cb107-3"></a><span class="co"># R은 함수를 가장 안쪽의 괄호에서부터 바깥쪽으로 순차적으로 읽어 나옵니다.</span></span>
+<span id="cb107-4"><a href="#cb107-4"></a>random_vector &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>, <span class="dt">replace =</span> T)</span>
+<span id="cb107-5"><a href="#cb107-5"></a>result &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">as.integer</span>(<span class="kw">is.na</span>(<span class="kw">unique</span>(random_vector))))</span>
+<span id="cb107-6"><a href="#cb107-6"></a><span class="kw">print</span>(result)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <p>원하는 결과를 얻을 수는 있지만 위의 두 번째 <code>result</code> 객체를 구성하는 함수는 한 줄로 나열되어 있어서 읽기 좀 어렵고, 왜 이렇게 코드를 짰는지 이해하기 어렵습니다. 만약 파이프 (<code>%&gt;%</code>)를 이용하면 코드를 더 보기 좋게 짤 수 있습니다. 파이프에서 이전 데이터는 (<code>.</code>)으로 표현됩니다.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1"></a>result &lt;-<span class="st"> </span><span class="kw">unique</span>(random_vector) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># random_vector의 중복값 없이 고유값만</span></span>
-<span id="cb108-2"><a href="#cb108-2"></a><span class="st">  </span><span class="kw">is.na</span>(.) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># 앞의 중복값을 없앤 random_vector 자료에 결측치가 있는지 확인</span></span>
-<span id="cb108-3"><a href="#cb108-3"></a><span class="st">                </span><span class="co"># 이 경우 is.na는 논리형 연산자, 결측치는 TRUE, 아니면 FALSE</span></span>
-<span id="cb108-4"><a href="#cb108-4"></a><span class="st">  </span><span class="kw">as.integer</span>(.) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># 앞의 random_vector를 정수형으로 변환</span></span>
-<span id="cb108-5"><a href="#cb108-5"></a><span class="st">                     </span><span class="co"># R에서 TRUE는 1, FALSE는 0</span></span>
-<span id="cb108-6"><a href="#cb108-6"></a><span class="st">  </span><span class="kw">sum</span>(.)             <span class="co"># 변환한 결과의 총합을 계산. 결측치가 없으면 FALSE만 있을 것</span></span>
-<span id="cb108-7"><a href="#cb108-7"></a><span class="kw">print</span>(result)        <span class="co"># 즉, result의 결과값은 데이터의 결측치(NA)의 수</span></span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1"></a>result &lt;-<span class="st"> </span><span class="kw">unique</span>(random_vector) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># random_vector의 중복값 없이 고유값만</span></span>
+<span id="cb109-2"><a href="#cb109-2"></a><span class="st">  </span><span class="kw">is.na</span>(.) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># 앞의 중복값을 없앤 random_vector 자료에 결측치가 있는지 확인</span></span>
+<span id="cb109-3"><a href="#cb109-3"></a><span class="st">                </span><span class="co"># 이 경우 is.na는 논리형 연산자, 결측치는 TRUE, 아니면 FALSE</span></span>
+<span id="cb109-4"><a href="#cb109-4"></a><span class="st">  </span><span class="kw">as.integer</span>(.) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># 앞의 random_vector를 정수형으로 변환</span></span>
+<span id="cb109-5"><a href="#cb109-5"></a><span class="st">                     </span><span class="co"># R에서 TRUE는 1, FALSE는 0</span></span>
+<span id="cb109-6"><a href="#cb109-6"></a><span class="st">  </span><span class="kw">sum</span>(.)             <span class="co"># 변환한 결과의 총합을 계산. 결측치가 없으면 FALSE만 있을 것</span></span>
+<span id="cb109-7"><a href="#cb109-7"></a><span class="kw">print</span>(result)        <span class="co"># 즉, result의 결과값은 데이터의 결측치(NA)의 수</span></span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <p>만약 첫 번째 주장(argument)가 데이터라면, <code>.</code>을 사용할 필요가 없습니다.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a>result &lt;-<span class="st"> </span><span class="kw">unique</span>(random_vector) <span class="op">%&gt;%</span></span>
-<span id="cb110-2"><a href="#cb110-2"></a><span class="st">  </span><span class="kw">is.na</span>() <span class="op">%&gt;%</span></span>
-<span id="cb110-3"><a href="#cb110-3"></a><span class="st">  </span><span class="kw">as.integer</span>() <span class="op">%&gt;%</span></span>
-<span id="cb110-4"><a href="#cb110-4"></a><span class="st">  </span><span class="kw">sum</span>()</span>
-<span id="cb110-5"><a href="#cb110-5"></a><span class="kw">print</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1"></a>result &lt;-<span class="st"> </span><span class="kw">unique</span>(random_vector) <span class="op">%&gt;%</span></span>
+<span id="cb111-2"><a href="#cb111-2"></a><span class="st">  </span><span class="kw">is.na</span>() <span class="op">%&gt;%</span></span>
+<span id="cb111-3"><a href="#cb111-3"></a><span class="st">  </span><span class="kw">as.integer</span>() <span class="op">%&gt;%</span></span>
+<span id="cb111-4"><a href="#cb111-4"></a><span class="st">  </span><span class="kw">sum</span>()</span>
+<span id="cb111-5"><a href="#cb111-5"></a><span class="kw">print</span>(result)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 </div>
 <div id="tidyverse를-위한-기타-참고자료" class="section level2">
