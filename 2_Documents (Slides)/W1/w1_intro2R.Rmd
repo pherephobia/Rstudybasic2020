@@ -6,12 +6,6 @@ author: |
   |
 date: "`r Sys.Date()`"
 output:
-  rmdformats::readthedown:
-    code_folding: show
-    self_contained: true
-    df_print: paged
-    thumbnails: false
-    lightbox: false
   rmarkdown::github_document:
     html_preview: yes
     df_print: paged
@@ -19,6 +13,12 @@ output:
     toc_depth: 2
     fig_width: 5
     fig_height: 5
+  rmdformats::readthedown:
+    code_folding: show
+    self_contained: true
+    df_print: paged
+    thumbnails: false
+    lightbox: false
 header-includes:
 - \usepackage{kotex}
 - \usepackage{hyperref}
