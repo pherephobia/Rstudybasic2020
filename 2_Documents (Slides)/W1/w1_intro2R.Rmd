@@ -240,7 +240,7 @@ matrix[1:2, 2:3]  # 더 작은 형태의 매트릭스로 추출되는 것을 확
 데이터 프레임은 다양한 유형의 자료를 열과 행의 틀 안에서 저장할 수 있도록 돕습니다.
 
 
-```{r}
+```{r, results='asis'}
 # R에 내장되어 있는 데이터 프레임을 불러들여 보겠습니다
 mtcars
 ```
@@ -258,7 +258,7 @@ mtcars
 
 일단 `tidyverse` 패키지는 **R**에 내장된 것이 아니라 Hadley Wickham이 개발한 것이기 때문에 별도로 불러와야 합니다. 패키지를 설치할 때는 `install.packages()`, 설치된 패키지를 불러올 때는 `library()` 혹은 `require()` 함수를 사용합니다.
 
-```{r}
+```{r, results='asis'}
 ## install.packages("tidyverse") # 저는 이미 설치되어 있는 상태라 코멘트 처리합니다.
 library(tidyverse)
 mtcars <- as_tibble(mtcars)
@@ -395,6 +395,8 @@ diamonds <- subset(diamonds, select = c("carat", "depth", "price"))
 ## 자료 유형을 확인하는 함수는 class(), 혹은 typeof()입니다.
 ## library(tidyverse) # 아까 불러왔지만, 여기서는 로드하지 않았다고 가정합시다.
 class(diamonds)
+```
+```{r, results='asis'}
 diamonds <- as_tibble(diamonds)
 
 descriptive_statistics <- describe(diamonds)
