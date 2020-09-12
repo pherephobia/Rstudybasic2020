@@ -34,6 +34,14 @@ header-includes:
 mainfont: NanumMyeongjo
 urlcolor: blue
 ---
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(error = TRUE, 
+                      warning = FALSE, message = FALSE,
+                      fig.width = 5.5, fig.height = 5.5,
+                      fig.align = "center")
+library(knitr, tidyverse)
+```
+
 # Introduction to **R** {#intro}
 
 **R**은 프로그래밍 언어에 가까운데 통계분석에도 꽤나 특화되어 있습니다. 요즘 *Python* 등도 주목받고 있지만 사회과학적 정량연구에 적용하는 정도로 통계분석을 수행하는 유관 학과들에서는 **R**을 많이 사용하는 것 같습니다. **R**은 단순하지만 동시에 복합적인 조합을 통해서 여러가지 분석을 수행할 수 있기 때문입니다.[^2-1] 
@@ -242,7 +250,7 @@ matrix[1:2, 2:3]  # 더 작은 형태의 매트릭스로 추출되는 것을 확
 
 ```{r, results='asis'}
 # R에 내장되어 있는 데이터 프레임을 불러들여 보겠습니다
-mtcars
+mtcars %>% knitr::kable()
 ```
 
 
@@ -262,7 +270,7 @@ mtcars
 ## install.packages("tidyverse") # 저는 이미 설치되어 있는 상태라 코멘트 처리합니다.
 library(tidyverse)
 mtcars <- as_tibble(mtcars)
-mtcars
+mtcars %>% knitr::kable()
 ```
 
 ## 패키지 (Packages)
@@ -400,7 +408,7 @@ class(diamonds)
 diamonds <- as_tibble(diamonds)
 
 descriptive_statistics <- describe(diamonds)
-descriptive_statistics
+descriptive_statistics %>% knitr::kable()
 
 # 좀 더 깔끔한 표로 만들어줄 수도 있습니다.
 
