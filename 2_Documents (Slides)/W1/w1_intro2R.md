@@ -628,16 +628,18 @@ names(diamonds) # 데이터셋에 포함된 변수들의 이름을 확인할 수
     ##  [8] "x"       "y"       "z"
 
 ``` r
-head(diamonds) # 맨 위 몇 개 행의 특성을 간략하게 보여줍니다.
+## 맨 위 몇 개 행의 특성을 간략하게 보여줍니다.
+head(diamonds) %>% knitr::kable()
 ```
 
-<div data-pagedtable="false">
-
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["carat"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cut"],"name":[2],"type":["ord"],"align":["right"]},{"label":["color"],"name":[3],"type":["ord"],"align":["right"]},{"label":["clarity"],"name":[4],"type":["ord"],"align":["right"]},{"label":["depth"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["table"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["price"],"name":[7],"type":["int"],"align":["right"]},{"label":["x"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["y"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["z"],"name":[10],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.23","2":"Ideal","3":"E","4":"SI2","5":"61.5","6":"55","7":"326","8":"3.95","9":"3.98","10":"2.43"},{"1":"0.21","2":"Premium","3":"E","4":"SI1","5":"59.8","6":"61","7":"326","8":"3.89","9":"3.84","10":"2.31"},{"1":"0.23","2":"Good","3":"E","4":"VS1","5":"56.9","6":"65","7":"327","8":"4.05","9":"4.07","10":"2.31"},{"1":"0.29","2":"Premium","3":"I","4":"VS2","5":"62.4","6":"58","7":"334","8":"4.20","9":"4.23","10":"2.63"},{"1":"0.31","2":"Good","3":"J","4":"SI2","5":"63.3","6":"58","7":"335","8":"4.34","9":"4.35","10":"2.75"},{"1":"0.24","2":"Very Good","3":"J","4":"VVS2","5":"62.8","6":"57","7":"336","8":"3.94","9":"3.96","10":"2.48"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-
-</div>
+| carat | cut       | color | clarity | depth | table | price |    x |    y |    z |
+| ----: | :-------- | :---- | :------ | ----: | ----: | ----: | ---: | ---: | ---: |
+|  0.23 | Ideal     | E     | SI2     |  61.5 |    55 |   326 | 3.95 | 3.98 | 2.43 |
+|  0.21 | Premium   | E     | SI1     |  59.8 |    61 |   326 | 3.89 | 3.84 | 2.31 |
+|  0.23 | Good      | E     | VS1     |  56.9 |    65 |   327 | 4.05 | 4.07 | 2.31 |
+|  0.29 | Premium   | I     | VS2     |  62.4 |    58 |   334 | 4.20 | 4.23 | 2.63 |
+|  0.31 | Good      | J     | SI2     |  63.3 |    58 |   335 | 4.34 | 4.35 | 2.75 |
+|  0.24 | Very Good | J     | VVS2    |  62.8 |    57 |   336 | 3.94 | 3.96 | 2.48 |
 
 ``` r
 str(diamonds) # 데이터셋의 구조(관측치의 수, 변수의 수, 자료유형 등)를 보여줍니다.
@@ -895,21 +897,21 @@ print(df)
 ```
 
     ##    age collgrad
-    ## 1   25      Yes
-    ## 2   38      Yes
-    ## 3   27      Yes
-    ## 4   33      Yes
-    ## 5   39       No
-    ## 6   26       No
-    ## 7   21       No
-    ## 8   26      Yes
-    ## 9   23      Yes
-    ## 10  36      Yes
-    ## 11  24       No
-    ## 12  22       No
-    ## 13  33       No
-    ## 14  24       No
-    ## 15  31       No
+    ## 1   22       No
+    ## 2   38       No
+    ## 3   38      Yes
+    ## 4   30      Yes
+    ## 5   38      Yes
+    ## 6   20      Yes
+    ## 7   40      Yes
+    ## 8   35      Yes
+    ## 9   25       No
+    ## 10  23      Yes
+    ## 11  26       No
+    ## 12  29       No
+    ## 13  28       No
+    ## 14  21       No
+    ## 15  32      Yes
 
 ## 티블
 
@@ -929,21 +931,21 @@ print(tb)
     ## # A tibble: 15 x 2
     ##      age collgrad
     ##    <int> <chr>   
-    ##  1    20 Yes     
-    ##  2    34 No      
-    ##  3    32 Yes     
-    ##  4    20 Yes     
-    ##  5    23 Yes     
-    ##  6    27 Yes     
-    ##  7    40 No      
-    ##  8    34 Yes     
-    ##  9    23 No      
-    ## 10    28 Yes     
-    ## 11    27 Yes     
-    ## 12    39 Yes     
-    ## 13    37 Yes     
-    ## 14    25 No      
-    ## 15    21 Yes
+    ##  1    21 No      
+    ##  2    37 Yes     
+    ##  3    29 No      
+    ##  4    27 No      
+    ##  5    36 No      
+    ##  6    38 Yes     
+    ##  7    34 Yes     
+    ##  8    30 No      
+    ##  9    30 Yes     
+    ## 10    28 No      
+    ## 11    35 Yes     
+    ## 12    32 Yes     
+    ## 13    25 Yes     
+    ## 14    27 Yes     
+    ## 15    28 No
 
 ### 함수
 

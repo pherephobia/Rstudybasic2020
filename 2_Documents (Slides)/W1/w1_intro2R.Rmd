@@ -371,7 +371,9 @@ rm(list = ls())
 library(ggplot2)
 data(diamonds)
 names(diamonds) # 데이터셋에 포함된 변수들의 이름을 확인할 수 있습니다.
-head(diamonds) # 맨 위 몇 개 행의 특성을 간략하게 보여줍니다.
+
+## 맨 위 몇 개 행의 특성을 간략하게 보여줍니다.
+head(diamonds) %>% knitr::kable()
 str(diamonds) # 데이터셋의 구조(관측치의 수, 변수의 수, 자료유형 등)를 보여줍니다.
 summary(diamonds) # 데이터셋의 요약통계치(평균, 중간값, 분위수 등)를 보여줍니다.
 
